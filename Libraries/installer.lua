@@ -6,7 +6,7 @@ local downloadedprofiles = {}
 
 local function vapeGithubRequest(scripturl)
 	if not isfile('vape/'..scripturl) then
-		local suc, res = pcall(function() return game:HttpGet('https://raw.githubusercontent.com/Erchobg/vapevoidware/main/'..scripturl, true) end)
+		local suc, res = pcall(function() return game:HttpGet('https://raw.githubusercontent.com/vo-bot/vapevoidware/main/'..scripturl, true) end)
 		if not isfolder("vape/Profiles") then
 			makefolder('vape/Profiles')
 		end
@@ -51,7 +51,7 @@ local function downloadVapeProfile(path)
 end
 
 task.spawn(function()
-    local res = game:HttpGet('https://api.github.com/repos/Erchobg/vapevoidware/contents/Profiles')
+    local res = game:HttpGet('https://api.github.com/repos/vo-bot/vapevoidware/contents/Profiles')
     if res ~= '404: Not Found' then 
         for i,v in next, httpservice:JSONDecode(res) do 
             task.wait()
